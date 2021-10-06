@@ -1,0 +1,22 @@
+{
+  "env": {
+    "es2021": true,
+    "commonjs": true,
+    // "es6": true,
+    "node": true
+  },
+  "extends": ["plugin:prettier/recommended", "airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "linebreak-style": "off",
+    "quotes": "off",
+    "camelcase": "off",
+    "no-console": "off", // turn this on in production
+    "arrow-parens": "off",
+    "prettier/prettier": ["error", { "quoteProps": "consistent", "parser": "flow" }],
+    "quote-props": ["warn", "consistent"]
+  }
+}
