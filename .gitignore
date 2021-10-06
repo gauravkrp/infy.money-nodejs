@@ -12,8 +12,8 @@
 /build
 
 # keys, secrets
-keys
-/keys
+#keys
+#/keys
 secrets
 
 # misc
