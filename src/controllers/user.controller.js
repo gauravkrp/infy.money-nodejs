@@ -31,7 +31,7 @@ class UserController {
   getUserByMobile = async (req, res, next) => {
     const { mobile } = req.params;
     try {
-      const user = await UserModel.findOne({ primaryMobile: mobile }).exec();
+      const user = await UserModel.findOne({ primary_mobile: mobile }).exec();
       if (!user) res.status(400).json({ success: false, message: `No user found with mobile number ${mobile}` });
       res.status(200).send(user);
     } catch (error) {
@@ -44,7 +44,7 @@ class UserController {
     const { mobile, FI_TYPE } = req.params;
     console.log(req.params, `fi_data.${FI_TYPE}`);
     try {
-      const user = await UserModel.findOne({ primaryMobile: mobile }, `fi_data.${FI_TYPE}`).exec();
+      const user = await UserModel.findOne({ primary_mobile: mobile }, `fi_data.${FI_TYPE}`).exec();
       if (!user) res.status(400).json({ success: false, message: `No data found with mobile number ${mobile}` });
       res.status(200).send(user);
     } catch (error) {
@@ -56,11 +56,17 @@ class UserController {
   getUserFiDataSummary = async (req, res) => {
     const { mobile } = req.params;
     try {
-      // const user = await UserModel.findOne({ primaryMobile: mobile }, { "transactions": 0 }).exec();
-      const user = await UserModel.aggregate([
-        { $project: { "fi_data.v.transactions": 0 } }
-      ]);
+      const user = await UserModel.findOne({ primary_mobile: mobile }, { "transactions": 0 }).exec();
       if (!user) res.status(400).json({ success: false, message: `No data found with mobile number ${mobile}` });
+      const { fi_data } = user;
+      const data_types = Object.keys(fi_data);
+      // console.log('data_types', data_types);
+      data_types.forEach(type => {
+        fi_data[type].forEach(item => {
+          // console.log(type, item.type);
+          delete item.transactions;
+        });
+      });
       res.status(200).send(user);
     } catch (error) {
       console.error(error);

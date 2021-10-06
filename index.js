@@ -1,5 +1,5 @@
 /**
- * zen-pfm-backend
+ * infy.money-backend
  * express app
  * Author: Gaurav Pandey (https://github.com/gauravkrp)
  */

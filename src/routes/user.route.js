@@ -20,7 +20,7 @@ const {
 // user spec routes
 router.get('/id/:id', awaitHandler(getUserById));
 router.get('/mobile/:mobile', awaitHandler(getUserByMobile));
-router.get('/mobile/:mobile/fi_data/summary', awaitHandler(getUserFiDataSummary));
+router.get('/mobile/:mobile/fi_data_summary', awaitHandler(getUserFiDataSummary));
 router.get('/mobile/:mobile/fi_data/:FI_TYPE', awaitHandler(getUserFiData));
 router.post('/', awaitHandler(createUser));
 router.patch('/id/:id', awaitHandler(updateUser)); // using patch for partial update

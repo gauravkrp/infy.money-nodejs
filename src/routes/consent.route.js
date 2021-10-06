@@ -22,7 +22,7 @@
 //       console.log(response.data);
 //       if (is_new) {
 //         const user_data = {
-//           primaryMobile: mobile_number,
+//           primary_mobile: mobile_number,
 //           aa_handle: `${mobile_number}@setu-aa`,
 //           consent_requests: [
 //             {
