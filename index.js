@@ -23,8 +23,7 @@ const createConsentArtifact = require('./src/utils/consent_request');
 const decrypt_data = require('./src/utils/decrypt_data');
 const { HTTP_METHOD } = require('./src/utils/enums');
 const UserRouter = require('./src/routes/user.route');
-const UserModel = require('./src/models/user.model');
-const { connect, disconnect } = require('./src/db');
+const { connect } = require('./src/db');
 
 // use the express-static middleware
 app.use(cors());

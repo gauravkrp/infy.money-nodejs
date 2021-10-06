@@ -16,7 +16,7 @@ const secretKey = process.env.SECRET_JWT || "";
  ******************************************************************************/
 
 class UserController {
-
+  
   getUserById = async (req, res, next) => {
     const { id } = req.params;
     try {

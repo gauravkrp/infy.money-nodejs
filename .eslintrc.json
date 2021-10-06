@@ -9,6 +9,7 @@
   "parserOptions": {
     "ecmaVersion": 2018
   },
+  "parser": "@babel/eslint-parser",
   "plugins": ["prettier"],
   "rules": {
     "linebreak-style": "off",

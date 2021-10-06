@@ -10,7 +10,7 @@ const HTTP_METHOD = {
   POST: 'POST',
   PUT: 'PUT',
   DELETE: 'DELETE',
-}
+};
 
 const CONSENT_MODE = {
   VIEW: 'VIEW',

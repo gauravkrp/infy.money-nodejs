@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema(
       validate: {
         validator: email => {
           if (email === '') return true;
-          return emailValidator(email.trim().toLowerCase())
+          return emailValidator(email.trim().toLowerCase());
         },
         message: 'Invalid email',
       },

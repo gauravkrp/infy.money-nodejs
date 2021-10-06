@@ -5,7 +5,15 @@ const awaitHandler = require('../middleware/awaitHandler.middleware');
 
 const router = express.Router();
 
-const { getUserById, getUserByMobile, getUserFiData, getUserFiDataSummary, createUser, updateUser, deleteUser } = userController;
+const {
+  getUserById,
+  getUserByMobile,
+  getUserFiData,
+  getUserFiDataSummary,
+  createUser,
+  updateUser,
+  deleteUser,
+} = userController;
 
 // router.post('/login', awaitHandler(userLogin)); // login route
 
