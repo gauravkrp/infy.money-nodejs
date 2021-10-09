@@ -31,8 +31,16 @@ app.use(express.json({ limit: '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 app.use(express.static('public'));
 
-// connect to db;
+// connect to db
 connect();
+
+// connect to redis
+const redis = require("redis");
+const redis_client = redis.createClient();
+redis_client.on("connection", () => {console.log('redis connection');});
+redis_client.on("error", function (error) {
+  console.error(error);
+});
 
 // global api axios config
 const axiosInstance = axios.create({
@@ -220,6 +228,7 @@ app.post('/api/FI/Notification', (req, res) => {
 
 // GET DATA
 app.get('/api/get-data', (req, res) => {
+  console.log('sending fi data...');
   res.send(JSON.parse(localStorage.getItem('jsonData')));
 });
 

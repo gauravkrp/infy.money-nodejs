@@ -40,6 +40,18 @@ class UserController {
     }
   };
 
+  getUserProfileByMobile = async (req, res, next) => {
+    const { mobile } = req.params;
+    try {
+      const user = await UserModel.findOne({ primary_mobile: mobile }, { fi_data: 0 }).exec();
+      if (!user) res.status(400).json({ success: false, message: `No user found with mobile number ${mobile}` });
+      res.status(200).send(user);
+    } catch (error) {
+      console.error(error);
+      res.status(400).send({ status: false, error });
+    }
+  };
+
   getUserFiData = async (req, res) => {
     const { mobile, FI_TYPE } = req.params;
     console.log(req.params, `fi_data.${FI_TYPE}`);

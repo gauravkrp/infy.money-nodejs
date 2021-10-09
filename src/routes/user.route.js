@@ -8,6 +8,7 @@ const router = express.Router();
 const {
   getUserById,
   getUserByMobile,
+  getUserProfileByMobile,
   getUserFiData,
   getUserFiDataSummary,
   createUser,
@@ -20,6 +21,7 @@ const {
 // user spec routes
 router.get('/id/:id', awaitHandler(getUserById));
 router.get('/mobile/:mobile', awaitHandler(getUserByMobile));
+router.get('/mobile/:mobile/profile', awaitHandler(getUserProfileByMobile));
 router.get('/mobile/:mobile/fi_data_summary', awaitHandler(getUserFiDataSummary));
 router.get('/mobile/:mobile/fi_data/:FI_TYPE', awaitHandler(getUserFiData));
 router.post('/', awaitHandler(createUser));
