@@ -138,7 +138,7 @@ const fetchSignedConsent = consent_id => {
 app.get('/api/', (req, res) => {
   res.send({
     status: true,
-    message: 'Hello from ZenMoney PFM API',
+    message: 'Hello from Infy.Money PFM API',
   });
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "pfm-app",
   "version": "1.0.0",
-  "description": "ZenMoney Personal Finance management",
+  "description": "Infy.Money PFM backend",
   "scripts": {
     "start": "node app.js",
     "lint-format": "yarn eslint --fix . && yarn prettier --write .",
@@ -10,8 +10,7 @@
   "author": "Gaurav | https://github.com/gauravkrp",
   "license": "MIT",
   "eslintIgnore": [
-    "public",
-    "_old"
+    "public"
   ],
   "dependencies": {
     "axios": "^0.22.0",
