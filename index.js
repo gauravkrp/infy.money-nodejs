@@ -239,3 +239,13 @@ app.all('/api/*', (req, res) => {
 
 // start the server listening for requests
 app.listen(config.port || 3000, () => console.log('Server is running...'));
+
+// testing github copilot
+function calculateDaysBetweenDates(begin, end) {
+  const oneDay = 24 * 60 * 60 * 1000;
+  const firstDate = new Date(begin);
+  const secondDate = new Date(end);
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+  return diffDays;
+}
+
